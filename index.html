@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duprat & Pellegrini Abogados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Estilos personalizados */
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 0 ;
+            
+        }
+        
+        .navbar-brand {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: white;
+            
+        }
+        
+        .navbar-brand small {
+            display: block;
+            font-size: 0.8rem;
+            text-align: center;
+            font-weight: 300;
+        }
+        
+        .nav-link {
+            color: #ccc;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+            font-size: 0.8rem;
+            font-weight:lighter;
+        }
+        
+        .nav-link:hover {
+            color: #5bc0de;
+        }
+        .nav-link:focus, .nav-link.active {
+        color: #5bc0de !important;
+        font-weight: bold;
+        }
+
+        .hero-section {
+            height: 85vh;
+            background-image: url('assets/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding-left: 3rem;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 3rem 0 1rem 0;
+        }
+        
+        .btn-outline-light {
+            border: 2px solid white;
+            padding: 0.5rem 2rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Estilos para la sección Nuestra Firma */
+        .nuestra-firma {
+            padding: 7rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .section-subtitle {
+            color: #6c757d;
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+        
+        .trayectoria-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .trayectoria-text {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: -1.5rem;
+        }
+        
+        .experiencia-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .experiencia-text {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            
+        }
+
+        .objetivo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            
+        }
+        
+        .objetivo-text {
+            color: #555;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            
+        }
+        
+        .firma-name {
+            font-weight: 600;
+        }
+        /* Estilos del botón de WhatsApp */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 20px;    /* A 20px del borde inferior */
+    right: 20px;     /* A 20px del borde derecho */
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Asegura que el botón esté siempre encima de otros elementos */
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-icon {
+    width: 30px;  /* Tamaño del ícono */
+    height: 30px;
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+        
+        @media (max-width: 768px) {
+            .hero-title {
+            font-size: 2rem;
+            }
+            
+            .hero-content {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            }
+            
+            .section-title {
+            font-size: 2rem;
+            }
+            
+        }
+        </style>
+    </head>
+    <body data-bs-spy="scroll" data-bs-target="#navbar">
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="">
+                DUPRAT & PELLEGRINI
+                <small>ABOGADOS</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nuestra-firma">NUESTRA FIRMA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#equipo">EL EQUIPO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#novedades">NOVEDADES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 hero-content">
+                    <h1 class="hero-title">Un equipo jurídico con experiencia<br>y compromiso</h1>
+                    <a href="#nuestra-firma" class="btn btn-outline-light">VER MÁS</a>
+                </div>
+            </div>
+        </div>
+        <!-- Botón de WhatsApp -->
+<a href="https://wa.me/11234567890?text=Hola,%20tengo%20una%20consulta%20para%20ustedes." target="_blank" class="whatsapp-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    Enviar mensaje
+</a>
+
+    </section>
+
+   
+    <!-- Sección Nuestra Firma -->
+    <section id="nuestra-firma" class="nuestra-firma">
+        <div class="container">
+            <h2 class="section-subtitle">NUESTRA FIRMA</h2>
+            <h1 class="section-title">DUPRAT & PELLEGRINI</h1>
+            
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="trayectoria-title">Nuestra trayectoria</h3>
+                    <p class="trayectoria-text">
+                        El estudio jurídico <span class="firma-name">DUPRAT & PELLEGRINI</span> es la síntesis de tres estudios importantes y destacados de la ciudad de Bahía Blanca. El del Dr. Arturo Duprat, fundado en el año 1928; el del Dr. Gregorio Scheines, establecido en el año 1936 y el del Dr. Alberto Spivak, en actividad desde el año 1962.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-16">
+                    <img src="assets/imgAbogados.avif" alt="Abogados en reunión" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="experiencia-title">Experiencia, capacidad y trabajo interdisciplinario</h3>
+                    <p class="experiencia-text">
+                        Somos un equipo de abogados y abogadas con una vasta experiencia profesional y académica sobre los temas de nuestra especialidad. Contamos con una dotación administrativa comprometida y eficiente y una infraestructura edilicia e informática que nos permite llevar a cabo nuestras tareas con la mayor eficiencia y calidad.
+                    </p>
+                    <p class="experiencia-text">
+                        Trabajamos en forma conjunta con profesionales de otras disciplinas, como estrategia de abordaje de los conflictos que se presentan en la actualidad. Ello nos permite comprender los problemas jurídicos en toda su complejidad, con la finalidad de ofrecer diferentes cursos de acción, procurando la obtención de una solución rápida, completa y satisfactoria para nuestros clientes.
+                    </p>
+                </div>
+                <div class="text-left">
+                <div class="col-12">
+                    <h2 class="objetivo-title">Objetivo y Misión</h2>
+                        <p class="objetivo-text">
+                            Nuestro objetivo es prestar un servicio personalizado y de calidad, con un alto grado de compromiso con los intereses de nuestros clientes.
+                        </p>
+                        <p class="objetivo-text">
+                            Nuestro valor agregado radica en una intensa actividad académica y vasta experiencia profesional, pilares que inspiran la prestación de nuestros servicios jurídicos.
+                        </p>
+                        <p class="objetivo-text">
+                            Somos un equipo de profesionales comprometidos con el Derecho y la Justicia, dedicados al diseño y proyecto de soluciones preventivas frente a eventuales conflictos, como así también, al asesoramiento en la planificación empresaria, contractual, familiar y sucesoria.
+                        </p>
+                </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+
+    <section id="equipo" class="equipo"> <!-- Sección de el equipo -->
+        <div class="container">
+            <h2 class="section-subtitle">EL EQUIPO</h2>
+            <h1 class="section-title">Profesionales</h1>
+            
+            <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 text-center">
+                    <p class="equipo-description">
+                        Somos un equipo de abogados y abogadas con habilidades, experiencia y formación para asesorar adecuadamente a nuestros clientes y acompañarlos en sus decisiones. Estamos capacitados para prestar un servicio jurídico responsable, comprometido y de calidad. Potenciamos nuestra actividad profesional con una intensa actividad académica.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="profesional-card">
+                        <img src="assets/fondoDePersona.webp" class="profesional-img">
+                        <div class="profesional-info">
+                            <h3 class="profesional-name">juant</h3>
+                            <p class="profesional-title">Abogado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="profesional-card">
+                        <img src="assets/fondoDePersona.webp" class="profesional-img">
+                        <div class="profesional-info">
+                            <h3 class="profesional-name">juan</h3>
+                            <p class="profesional-title">Abogada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="profesional-card">
+                        <img src="assets/fondoDePersona.webp" class="profesional-img">
+                        <div class="profesional-info">
+                            <h3 class="profesional-name">juan</h3>
+                            <p class="profesional-title">Abogada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="profesional-card">
+                        <img src="assets/fondoDePersona.webp"  class="profesional-img">
+                        <div class="profesional-info">
+                            <h3 class="profesional-name">juan</h3>
+                            <p class="profesional-title">Abogada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .equipo {
+            padding: 4rem 0;
+            background-color: #fff;
+        }
+    
+        .equipo-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+    
+        .profesional-card {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+    
+        .profesional-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+    
+        .profesional-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+    
+        .profesional-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: 0.25rem;
+        }
+    
+        .profesional-title {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+    .profesional-card:hover .profesional-img {
+        transform: scale(1.08);
+    }
+
+    .profesional-card:hover .profesional-info {
+        background: rgba(19, 39, 83, 0.69);
+    }
+    
+        @media (max-width: 768px) {
+            .profesional-card {
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+<section id="novedades" class="novedades"><!-- Sección de las ultimas novedades -->
+    <div class="container">
+        <h2 class="section-subtitle">Novedades</h2>
+        <h1 class="section-title">Últimas novedades</h1>
+        
+        <div class="row g-4">
+            <!-- Postgrado Card -->
+            <div class="col-md-4">
+                <div class="novedad-card">              
+                    <img src="assets/blancoYnegro.webp" alt="Postgrado Virtual" class="novedad-img">
+                    <div class="novedad-content">
+                        <h3 class="novedad-title">Postgrado Modalidad Virtual</h3>
+                        <p class="novedad-text">
+                            La Dra. Pellegrini participa como docente encargada del módulo "Actualización en conflictos patrimoniales derivados del matrimonio y divorcio", 6 y 7 de Noviembre, 2020.
+                        </p>
+                        <a href="#" class="btn-ver-mas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Designación Card -->
+            <div class="col-md-4">
+                <div class="novedad-card">
+                    <img src="assets/blancoYnegro.webp" alt="Suprema Corte" class="novedad-img">
+                    <div class="novedad-content">
+                        <h3 class="novedad-title">Designación Conjuez</h3>
+                        <p class="novedad-text">
+                            El Dr. Diego Duprat ha sido designado Conjuez de la Suprema Corte de Justicia Provincial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capacitación Card -->
+            <div class="col-md-4">
+                <div class="novedad-card">
+                    <img src="assets/blancoYnegro.webp" alt="Capacitación Empresas" class="novedad-img">
+                    <div class="novedad-content">
+                        <h3 class="novedad-title">Capacitación en Empresas de Familia</h3>
+                        <p class="novedad-text">
+                            Los Dres. Diego y Carolina Duprat participarán asiduamente en capacitaciones sobre Empresas de Familia en distintas Universidades del país.
+                        </p>
+                        <a href="#" class="btn btn-outline-secondary">PUEF 2020</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .novedades {
+        padding: 4rem 0;
+        background-color: #fff;
+    }
+
+    .novedad-card {
+        height: 100%;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .novedad-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .novedad-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        filter: grayscale(100%);
+    }
+
+    .novedad-content {
+        padding: 1.5rem;
+    }
+
+    .novedad-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .novedad-text {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-ver-mas {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border: 1px solid #333;
+        color: #333;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-ver-mas:hover {
+        background: #333;
+        color: #fff;
+    }
+
+    .badge-puef {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #f8f9fa;
+        border: 1px solid #e5e5e5;
+        color: #333;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .novedad-card {
+            margin-bottom: 2rem;
+        }
+        
+        .novedad-img {
+            height: 250px;
+        }
+    }
+</style>
+<!-- Sección de las ultimas novedades -->
+<section id="contacto" class="contacto">
+    <div class="container">
+        <h1 class="section-title">Contáctenos</h1>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-0 ">
+                <div class="contacto-img-wrapper">
+                    <img src="assets/contactenos.jpg" alt="Fachada del estudio" class="contacto-img">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contacto-info">
+                    <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <span class="info-text">narnia 441</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-text">Bahía Blanca - Buenos Aires - Argentina</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-text">Código Postal B8000IJI</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Tel/Fax:</span>
+                        <span class="info-text">(0291) 000-0000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contacto {
+        padding: 4rem 0;
+        background-color: #fff;
+    }
+
+    .contacto-img-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .contacto-img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .contacto-img:hover {
+        transform: scale(1.02);
+    }
+
+    .contacto-info {
+        padding: 2rem;
+        background: #f8f9fa;
+        border: 1px solid #e5e5e5;
+    }
+
+    .info-item {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-label {
+        font-weight: 600;
+        color: #333;
+        margin-right: 0.5rem;
+    }
+
+    .info-text {
+        color: #555;
+    }
+
+    @media (max-width: 992px) {
+        .contacto-info {
+            margin-top: 2rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .info-item {
+            text-align: left;
+        }
+    }
+</style>
+<div class="container">
+    <div class="contact-wrapper">
+        <!-- Contenedor del mapa -->
+        <div class="map-container">
+            <div class="location-info">
+                <h3>Darregueira 850</h3>
+                <p>Darregueira 850, B8000 Bahía Blanca,</p>
+                <p>Provincia de Buenos Aires</p>
+                <a href="https://maps.google.com/maps?q=Darregueira+850,+Bahía+Blanca,+Buenos+Aires" target="_blank">
+                    <span>Cómo llegar</span>
+                </a>
+            </div>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.5076171873584!2d-62.27252492351837!3d-38.71716937176296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbcb0cb6e98e7%3A0x3c641fa869a8ae1c!2sBelgrano%20441%2C%20B8000%20Bah%C3%ADa%20Blanca%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1710339600000!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-controls">
+                <button class="zoom-in">+</button>
+                <button class="zoom-out">−</button>
+            </div>
+        </div>
+
+        <!-- Contenedor del formulario -->
+        <div class="form-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Ingrese su Nombre y Apellido" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Ingrese su Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Ingrese su Teléfono">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        Enviar Mensaje
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Referencia al formulario
+        const form = document.getElementById('contact-form');
+        
+        // Manejador de envío del formulario
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Obtener los valores del formulario
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Aquí puedes agregar la lógica para enviar los datos a un servidor
+            console.log('Formulario enviado:', { name, email, phone, message });
+            
+            // Mostrar mensaje de éxito
+            alert('Mensaje enviado correctamente!');
+            
+            // Limpiar el formulario
+            form.reset();
+        });
+        
+        // Funcionalidad para los botones de zoom (simulada)
+        const zoomIn = document.querySelector('.zoom-in');
+        const zoomOut = document.querySelector('.zoom-out');
+        
+        zoomIn.addEventListener('click', function() {
+            alert('Zoom in - Esta funcionalidad requeriría la API de Google Maps');
+        });
+        
+        zoomOut.addEventListener('click', function() {
+            alert('Zoom out - Esta funcionalidad requeriría la API de Google Maps');
+        });
+    });
+</script>    <style>
+    /* Reset básico */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Container styles */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+    }
+
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 768px) {
+        .contact-wrapper {
+            flex-direction: row;
+            height: 450px;
+        }
+    }
+
+    /* Map container */
+    .map-container {
+        position: relative;
+        height: 400px;
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .map-container {
+            width: 50%;
+            height: auto;
+        }
+    }
+
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .location-info {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background-color: #fff;
+        padding: 12px;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .location-info h3 {
+        font-weight: bold;
+        margin: 0 0 8px 0;
+    }
+
+    .location-info p {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .location-info a {
+        display: flex;
+        align-items: center;
+        color: #1a73e8;
+        text-decoration: none;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .location-info a:hover {
+        text-decoration: underline;
+    }
+
+    .map-controls {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-controls button {
+        padding: 8px 12px;
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    .map-controls button:hover {
+        background-color: #f5f5f5;
+    }
+
+    .map-controls .zoom-in {
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Form container */
+    .form-container {
+        padding: 14px;
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .form-container {
+            width: 60%;
+        }
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #20B2AA;
+    }
+
+    .form-group textarea {
+        min-height: 160px;
+        resize: vertical;
+    }
+
+    .form-submit {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .submit-btn {
+        display: flex;
+        align-items: center;
+        background-color: #20B2AA;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+        background-color: #188F89;
+    }
+
+    .submit-btn .icon {
+        margin-right: 8px;
+        width: 16px;
+        height: 16px;
+    }
+</style>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2 class="footer-title">DUPRAT & PELLEGRINI</h2>
+                <p class="footer-subtitle">Abogados Bahía Blanca - Argentina</p>
+            </div>
+            <p class="footer-copyright">Copyright ©2025</p>
+        </div>
+    </div>
+    
+</footer>
+
+<style>
+    .footer {
+        background-color: #1a1a1a;
+        padding: 2rem 0;
+        color: white;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-brand {
+        margin-bottom: 1rem;
+    }
+
+    .footer-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-subtitle {
+        font-size: 0.875rem;
+        color: #ccc;
+        margin: 0;
+    }
+
+    .footer-copyright {
+        font-size: 0.875rem;
+        color: #888;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            text-align: center;
+            align-items: center;
+        }
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
